@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cstdlib>   
+#include <ctime>
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	int num = rand() % 100;   // 특정배수를 출력할 때의 범위를 랜덤으로 설정한다.
+
+	cout << "랜덤한 수: " << num << endl;
+
+	int i;
+
+	cout << "특정 배수 개수: ";
+	cin >> i;
+
+	cout << "<특정 배수만 출력하는 프로그램>" << endl;
+
+	int ans;
+
+	for (int tries = 0; tries < 10; tries++) {               //출력 프로그램을 10번 돌릴 수 있으며, 시도 횟수를 셀 수 있다.
+		cout << tries << "번째 특정 배수: ";
+		cin >> ans;
+		cout << "<특정 배수만 출력하는 프로그램>" << endl;
+		
+		for (int x = 1; x <= num; x++) {
+			if (x % ans == 0) {              //나머지가 0인 경우가 곧 배수가 되므로 이 경우에 맞는 수를 출력하면 된다.
+				cout << x << " , ";
+			}
+		}
+		cout << endl;
+		cout << "<특정 배수 제외 출력하는 프로그램>" << endl;
+		for (int x = 1; x <= num; x++) {
+			if (x % ans != 0) {
+				cout << x << " , ";
+		
+			}
+		}
+		cout << endl;
+		continue;     // 한번의 프로그램이 실행 완료되면 다시 처음 for문으로 돌아가 재실행할 수 있다.
+		
+	}
+	return 0;
+} 
