@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
+	int arr[3][10] = {  };
 	int ans;
 	int x, y;
 
@@ -11,16 +12,13 @@ int main()
 		cin >> ans;
 		cout << endl;
 
-		if (ans == 1) {                        //if문을 사용하여 1입력시 좌석을 선택하고 0을 입력하면 프로그램 종료
-			int arr[3][10] = { 0 };
-
+		if (ans == 1) {                               //if문을 사용하여 1입력시 좌석을 선택하고 0을 입력하면 프로그램 종료
 			cout << "1 2 3 4 5 6 7 8 9 10" << endl;
 			cout << "-----------------------------------" << endl;
 
 			for (int x = 0; x < 3; x++) {         //중첩 for문을 이용해 2차원 배열을 출력
 				for (int y = 0; y < 10; y++) {
 					cout << arr[x][y] << " ";
-
 				}
 				cout << endl;
 			}
@@ -43,7 +41,6 @@ int main()
 			else
 				cout << "이미 예약된 자리입니다." << endl;
 		}
-
 		else {
 			cout << "좌석 예약 종료";
 			break;
