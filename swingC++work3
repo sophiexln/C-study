@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int total(int* a, int* b, int* c, int* d) {
+    int result;
+	result = *a + *b + *c + *d;
+	return result;
+}
+
+int myaccounts(int* x) {
+	for (int i = 0; i < 4; i++)
+	{
+		cout << *(x + i) << "   |   ";
+	}
+	return *x;
+}
+
+int main() {
+	string bank_name[4] = { "하나", "우리", "신한", "국민" };
+	int bank[4] = { 5000, 4000, 0, 10 };
+	int total_money = 9010;
+	int* array = bank;
+	int total(int* a, int* b, int* c, int* d);
+
+	cout << "************** SWING 자산관리 서비스 **************" << endl;
+	cout << "---------------- 은행 별 계좌정보 ----------------" << endl;
+	for (int i = 0; i < 4; i++) {
+		cout << bank_name[i] << "   |   ";
+	}
+	cout << endl;
+	cout << "--------------------------------------------------" << endl;
+	myaccounts(array);
+	cout << endl;
+	cout << "현재 SWING 자산관리 서비스에 등록된 회원님의 총 자산은 " << total_money << "원입니다." << endl;
+	cout << "***************************************************" << endl;
+	return 0;
+}
