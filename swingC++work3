@@ -2,9 +2,9 @@
 using namespace std;
 
 int total(int* a, int* b, int* c, int* d) {
-    int result;
-	result = *a + *b + *c + *d;
-	return result;
+    int total_money;
+	total_money = *a + *b + *c + *d;      // 총 자산을 total_money에 저장
+	return total_money;
 }
 
 int myaccounts(int* x) {
@@ -16,9 +16,9 @@ int myaccounts(int* x) {
 }
 
 int main() {
-	string bank_name[4] = { "하나", "우리", "신한", "국민" };
+	string bank_name[4] = { "하나", "우리", "신한", "국민" };     
 	int bank[4] = { 5000, 4000, 0, 10 };
-	int total_money = 9010;
+	int result;
 	int* array = bank;
 	int total(int* a, int* b, int* c, int* d);
 
@@ -31,7 +31,9 @@ int main() {
 	cout << "--------------------------------------------------" << endl;
 	myaccounts(array);
 	cout << endl;
-	cout << "현재 SWING 자산관리 서비스에 등록된 회원님의 총 자산은 " << total_money << "원입니다." << endl;
+	int x = 5000, y = 4000, z = 0, r = 10;
+	result = total(&x, &y, &z, &r);            // call by address 함수 호출 방식 사용
+	cout << "현재 SWING 자산관리 서비스에 등록된 회원님의 총 자산은 " << result << "원입니다." << endl;
 	cout << "***************************************************" << endl;
 	return 0;
 }
