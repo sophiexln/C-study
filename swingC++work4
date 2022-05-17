@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class BOX
+{
+	char shape;         // 멤버변수는 따로 지정자를 표기하지 않을 시 private으로 저장
+	int width;
+	int height;
+	int w;
+	int h;
+	char f;
+
+public:
+	BOX(int w1, int h1)
+	{
+		width = w1;
+		height = h1;
+	}
+
+	void setFil(char f1)
+	{
+		f = f1;
+		cout << "문자를 입력하시오: ";
+		cin >> f;
+	}
+
+	void setsize(int w1, int h1) {
+		width = w1;
+		h = h1;
+		cout << "가로, 세로 길이를 입력하시오: ";
+		cin >> w >> h;
+	}
+
+	void draw() {
+
+		int i;
+		int k;
+		cout << "문자를 입력하시오: ";
+		cin >> f;
+		cout << "가로, 세로 길이를 입력하시오: ";
+		cin >> w >> h;
+
+		for (i = 0; i < h; i++) {
+			for (k = 0; k < w; k++) {
+				cout << f;
+			}
+			cout << endl;
+		}
+	}
+};
+
+int main() {
+	BOX box1(3, 4);   // 생성자에 매개변수를 입력하였으므로 개체를 만들 때에도 매개변수를 입력해야 호출 가능
+	box1.draw();
+}
