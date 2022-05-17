@@ -35,16 +35,18 @@ public:
 
 		int i;
 		int k;
-		cout << "문자를 입력하시오: ";
-		cin >> f;
-		cout << "가로, 세로 길이를 입력하시오: ";
-		cin >> w >> h;
+		while (1) {
+			cout << "문자를 입력하시오: ";
+			cin >> f;
+			cout << "가로, 세로 길이를 입력하시오: ";
+			cin >> w >> h;
 
-		for (i = 0; i < h; i++) {
-			for (k = 0; k < w; k++) {
-				cout << f;
+			for (i = 0; i < h; i++) {
+				for (k = 0; k < w; k++) {
+					cout << f;
+				}
+				cout << endl;
 			}
-			cout << endl;
 		}
 	}
 };
