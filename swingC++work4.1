@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+class Shape
+{
+	string NAME;       //소멸자에서 값을 변경해야하므로 변수를 지정함
+	int A, B, C;
+	
+public:
+	int getA() {
+		return A;
+	}
+
+	int getB() {
+		return B;
+	}
+
+	int getC() {
+		return C;
+	}
+
+	void AreaOval() {
+		double result = A * B * 3.14;
+		cout << "타원의 넓이는 " << result << "이다" << endl;
+	}
+
+	void AreaLadder() {
+		int result = (A + C) * B / 2;            //나눗셈 기호 착각하지 말 것! %는 몫을 구할 때 쓰는 연산자임
+		cout << "사다리꼴의 넓이는 " << result << "이다" << endl;
+	}
+
+	void AreaRect() {
+		int result = A * B;
+		cout << "사각형의 넓이는 " << result << "이다" << endl;
+	}
+
+	void setTwo(int a, int b) {
+		A = a;          //int A라고 입력할 시 지역변수를 따로 생성하는 것임 (멤버변수 아니라!)
+		B = b;  
+	}
+
+	void setThree(int a, int b, int c) {
+		A = a;
+		B = b;
+	    C = c;
+	}
+
+	Shape() {
+		NAME = "CircleA";
+	}
+	Shape(int a, int b) {
+		A = a;
+		B = b;
+		NAME = "Rectangular";
+	}
+	Shape(int a, int b, int c) {
+		A = a;
+		B = b;
+		C = c;
+		NAME = "Ladder";
+	}
+	~Shape();
+};
+
+Shape::~Shape()        //소멸자는 한 번만 사용 가능
+{
+	cout << "Shape 소멸 " << NAME << "클래스" << endl;
+}
+
+int main() {
+	Shape a(5, 1);
+	Shape b(10, 20);
+	Shape c(3, 7, 4);
+
+	a.AreaOval();
+	b.AreaRect();
+
+	c.AreaLadder();
+	c.setThree(5, 6, 10);
+	c.AreaLadder();
+}
